@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Leonardo Paulucci">
+	<meta name="description" content="Grupo amigo dos animais, voltado para ajudar animais de rua, 
+	com doações e castrações grátis para quem tem renda baixa, facilitando para as pessoas adotarem animais">
+    <meta name="keywords" content="Castração de animais, Animais abandonados, Adoção de animais, Grupo Amigo dos Animais">
+	<title>GAMA - Grupo Amigo dos Animais</title>
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="css/bulma.min.css">
+
+	<script src="js/vue.min.js"></script>
+</head>
+<body>
+	<div id="app" v-cloak>
+		<div id="logo">
+			<div class="esquerda">
+				<h1 class="title is-3">Animais Castrados Até Agora</h1>
+				<div class="js-bounty"></div>
+			</div>
+			<div class="direita">
+				<h1 class="subtitle is-3">Grupo Amigo dos Animais</h1>
+				<h1 class="subtitle is-3">Castração a Baixo Custo</h1>
+				<h1 class="subtitle is-3">Seja um Colaborador</h1>
+			</div>
+		</div>
+		<div class="tabs">
+			<ul>
+				<li v-for="x in menu" :class="x.classe"><a :href="'#' + x.nome " @click="clickpagina(x.nome)" v-text="x.pagina"></a></li>
+				<li><a @click="abrir">Blog GAMA</a></li>
+			</ul>
+		</div>
+		<div class="navbar">
+			<div class="navbar-brand">
+				<div :class="dropdown">
+						<div class="dropdown-trigger">
+							<button class="button navbar-burger" aria-haspopup="true" aria-controls="dropdown-menu4" @click="ativadw" >
+								<span></span>
+								<span></span>
+								<span></span>
+							</button>
+						</div>
+						<div class="dropdown-menu" id="dropdown-menu4" role="menu">
+							<div class="dropdown-content">
+								<div v-for="x in menu" class="dropdown-item">
+									<li><a :href="'#' + x.nome " @click="clickpagina(x.nome, 1)" v-text="x.pagina"></a></li>
+									<hr>
+								</div>
+								<div class="dropdown-item">
+									<li><a @click="abrir">Facebook GAMA</a></li>
+								</div>
+							</div>
+						</div>
+					</div>
+					<h1 class="navbar-item subtitle is-5">
+						{{pgNm}}
+					</h1>
+				</div>
+			</div>
+		<div class="pagina" id="home" v-show="pg === 'home'">
+			<h1 class="title is-2">Bem Vindo ao Gama</h1>
+			<p>
+				Somos um grupo que valoriza a vida animal e nos preocupamos com o alto índice de animais abandonados, a maioria provenientes de crias indesejadas ou adoção por impulso e sem comprometimento e responsabilidade pela vida adotada.
+			<br/>
+				Iniciamos nossa atividade em 2010 e castramos animais de famílias de baixa renda ou os abandonados nas ruas da cidade.
+			</p>
+			<br/>
+			<p>
+				Pesquisa feita em 2008 nos EUA	revela que o Brasil é o 2º país que mais tem cães nas ruas, cerca de 30 milhões, ficando atrás somente do EUA. As gatas têm 4 ninhadas por ano, com cerca de 4 filhotes por cria e as cadelas têm das ninhada por ano e uma média de 6 filhotes em cada. Em 6 anos, uma única cadela pode gerar até 40.000 descendentes. Não existem lares responsáveis para todos e a maioria desses animais são abandonados, descartados como brinquedos velhos e apenas conhecem as ruas, a fome, as doenças e os maus tratos.
+				Com estes números aumentando, nós do GAMA (Grupo Amigo dos Animais), através da venda de rifas, calendários, e outros projetos bem como de contribuições financeiras e ajuda voluntária de pessoas engajadas nesta causa, estamos lutando para diminuir o número de animais abandonados na cidade de Taquaritinga e distritos. Atuando desta forma estamos ainda contribuindo com a saúde pública do Município, uma vez que esta seria a função do centro de zoonoses, órgão que ainda não existe em nossa cidade.
+				Ajude-nos nesta luta! Colabore com o GAMA para proporcionar melhores condições de vida a todos animais.
+			</p>
+			<br/>
+				<em>
+					Todos Direitos Reservados
+				</em>
+			<br/><br/>
+		</div>
+		<div class="pagina" id="sobre" v-show="pg === 'sobre'">
+			<h1 class="title is-2">Gama Grupo Amigo dos Animais</h1>
+			Somos um grupo que valoriza a vida animal e nos preocupamos com o alto índice de animais abandonados, a maioria provenientes de crias indesejadas ou adoção por impulso e sem comprometimento e responsabilidade pela vida adotada.<br/><br/>
+			Iniciamos nossa atividade em 2010 e castramos animais de famílias de baixa renda ou os abandonados nas ruas da cidade.<br/><br/>
+			Pesquisa feita em 2008 nos EUA	 revela que o Brasil é o 2º país que mais tem cães nas ruas, cerca de 30 milhões, ficando atrás somente do EUA. As gatas têm 4 ninhadas por ano, com cerca de 4 filhotes por cria e as cadelas têm das ninhada por ano e uma média de 6 filhotes em cada. Em 6 anos, uma única cadela pode gerar até 40.000 descendentes. Não existem lares responsáveis para todos e a maioria desses animais são abandonados, descartados como brinquedos velhos e apenas conhecem as ruas, a fome, as doenças e os maus tratos.<br/><br/>
+			Com estes números aumentando, nós do GAMA (Grupo Amigo dos Animais), através da venda de rifas, calendários, e outros projetos bem como de contribuições financeiras e ajuda voluntária de pessoas engajadas nesta causa, estamos lutando para diminuir o número de animais abandonados na cidade de Taquaritinga e distritos. Atuando desta forma estamos ainda contribuindo com a saúde pública do Município, uma vez que esta seria a função do centro de zoonoses, órgão que ainda não existe em nossa cidade.<br/><br/>
+			Ajude-nos nesta luta! Colabore com o GAMA para proporcionar melhores condições de vida a todos animais.</p><br/>
+			<p>Gama - Grupo Amigo dos Animais</p>
+			<p>Banco: Caixa Economia Federal</p>
+			<p>Ag. : 0358 Op.: 003</p>
+			<p>C/C : 00001470-4.</p>
+			<br/>
+			<p>Amigo de Verdade colabora !</p>
+			<p>Faça Parte deste movimento ! Acesse o nosso <a @click="abrir" >Facebook !!!</a></p>
+		</div>
+		<div class="pagina" id="formu" v-show="pg === 'formu'">
+			<h1 class="subtitle is-3">Formulário para Cadastro e Castração de Animal</h1>
+			<div class="box">
+				<form>
+					<label class="label">
+						Seu Nome:
+						<input type="text" placeholder="Seu Nome Aqui" class="input"/>
+					</label>
+					<label class="label">
+						RG:<span class="not">Sem Pontos nem Traços</span>
+						<input type="number" class="input" placeholder="123456789"/>
+					</label>
+					<label class="label">
+						CPF:<span class="not">Sem Pontos nem Traços</span>
+						<input type="number" class="input" placeholder="12345678911"/>
+					</label>
+					<label class="label">
+						Data de Nascimento:
+						<input type="date" class="input"/>
+					</label>
+					<label class="label">
+						Telefone ou Celular:
+						<input type="tel" class="input" placeholder="16 99999-9999"/>
+					</label>
+					<label class="label">
+						Endereço:
+						<input type="text" class="input" placeholder="Av Exemplo N°X"/>
+					</label>
+					<label class="label">
+						Bairro:
+						<input type="text" class="input" placeholder="Jardim do Exemplo"/>
+					</label>
+					<label class="label">
+						Renda Familiar:
+						<input type="text" class="input" placeholder="R$2145,50"/>
+					</label>
+					<label class="label">
+						Numero de Pessoas na Residência:
+						<input type="number" class="input" placeholder="5"/>
+					</label>
+				</form>
+				<form>
+				</form>
+			</div>
+		</div>
+	</div>
+	<script src="https://unpkg.com/bounty@1.1.6/lib/bounty.js"></script>
+	<script src="js/index.js"></script>
+</body>
+</html>
