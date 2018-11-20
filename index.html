@@ -15,52 +15,54 @@
 	<script src="js/vue.min.js"></script>
 </head>
 <body>
-	<div id="app" v-cloak>
-		<div id="logo">
-			<div class="esquerda">
+	<section id="app" v-cloak>
+		<header>
+		<section id="logo">
+			<section class="esquerda">
 				<h1 class="title is-3">Animais Castrados Até Agora</h1>
-				<div class="js-bounty"></div>
-			</div>
-			<div class="direita">
+				<section class="js-bounty"></section>
+			</section>
+			<section class="direita">
 				<h1 class="subtitle is-3">Grupo Amigo dos Animais</h1>
 				<h1 class="subtitle is-3">Castração a Baixo Custo</h1>
 				<h1 class="subtitle is-3">Seja um Colaborador</h1>
-			</div>
-		</div>
-		<div class="tabs">
+			</section>
+		</section>
+		<nav class="tabs">
 			<ul>
 				<li v-for="x in menu" :class="x.classe"><a :href="'#' + x.nome " @click="clickpagina(x.nome)" v-text="x.pagina"></a></li>
 				<li><a @click="abrir">Blog GAMA</a></li>
 			</ul>
-		</div>
-		<div class="navbar">
-			<div class="navbar-brand">
-				<div :class="dropdown">
-						<div class="dropdown-trigger">
+		</nav>
+			<nav class="navbar">
+				<section class="navbar-brand">
+					<section :class="dropdown">
+						<section class="dropdown-trigger">
 							<button class="button navbar-burger" aria-haspopup="true" aria-controls="dropdown-menu4" @click="ativadw" >
 								<span></span>
 								<span></span>
 								<span></span>
 							</button>
-						</div>
-						<div class="dropdown-menu" id="dropdown-menu4" role="menu">
-							<div class="dropdown-content">
-								<div v-for="x in menu" class="dropdown-item">
+						</section>
+						<section class="dropdown-menu" id="dropdown-menu4" role="menu">
+							<section class="dropdown-content">
+								<section v-for="x in menu" class="dropdown-item">
 									<li><a :href="'#' + x.nome " @click="clickpagina(x.nome, 1)" v-text="x.pagina"></a></li>
 									<hr>
-								</div>
-								<div class="dropdown-item">
+								</section>
+								<section class="dropdown-item">
 									<li><a @click="abrir">Facebook GAMA</a></li>
-								</div>
-							</div>
-						</div>
-					</div>
+								</section>
+							</section>
+						</section>
+					</section>
 					<h1 class="navbar-item subtitle is-5">
 						{{pgNm}}
 					</h1>
-				</div>
-			</div>
-		<div class="pagina" id="home" v-show="pg === 'home'">
+				</section>
+			</nav>
+		</header>
+		<section class="pagina" id="home" v-show="pg === 'home'">
 			<h1 class="title is-2">Bem Vindo ao Gama</h1>
 			<p>
 				Somos um grupo que valoriza a vida animal e nos preocupamos com o alto índice de animais abandonados, a maioria provenientes de crias indesejadas ou adoção por impulso e sem comprometimento e responsabilidade pela vida adotada.
@@ -78,8 +80,8 @@
 					Todos Direitos Reservados
 				</em>
 			<br/><br/>
-		</div>
-		<div class="pagina" id="sobre" v-show="pg === 'sobre'">
+		</section>
+		<section class="pagina" id="sobre" v-show="pg === 'sobre'">
 			<h1 class="title is-2">Gama Grupo Amigo dos Animais</h1>
 			Somos um grupo que valoriza a vida animal e nos preocupamos com o alto índice de animais abandonados, a maioria provenientes de crias indesejadas ou adoção por impulso e sem comprometimento e responsabilidade pela vida adotada.<br/><br/>
 			Iniciamos nossa atividade em 2010 e castramos animais de famílias de baixa renda ou os abandonados nas ruas da cidade.<br/><br/>
@@ -93,10 +95,10 @@
 			<br/>
 			<p>Amigo de Verdade colabora !</p>
 			<p>Faça Parte deste movimento ! Acesse o nosso <a @click="abrir" >Facebook !!!</a></p>
-		</div>
-		<div class="pagina" id="formu" v-show="pg === 'formu'">
+		</section>
+		<section class="pagina" id="formu" v-show="pg === 'formu'">
 			<h1 class="subtitle is-3">Formulário para Cadastro e Castração de Animal</h1>
-			<div class="box">
+			<section class="box">
 				<form>
 					<label class="label">
 						Seu Nome:
@@ -137,10 +139,12 @@
 				</form>
 				<form>
 				</form>
-			</div>
-		</div>
-	</div>
+			</section>
+		</section>
+		<footer> Direitos autorais reservados a ONG GAMA</footer>
+	</section>
 	<script src="https://unpkg.com/bounty@1.1.6/lib/bounty.js"></script>
 	<script src="js/index.js"></script>
 </body>
 </html>
+
